@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Hello Sir</title>
+        <style>
+        *{-webkit-tap-highlight-color: rgba(0,0,0,0);}
+        body{margin:0; padding:0; -webkit-user-select: none; font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;}
+        #wrapout{overflow: scroll;}
+        .atas{height: 50px;} .atas h1{margin: 0; padding: 0;}
+        .tengah{-webkit-overflow-scrolling:touch; overflow: scroll;}
+        .bawah{ }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div id="wrapout">
+        <div class="atas"><h1>Welcome, Sir</h1></div>
+        <div class="tengah" id="tengah">
+        <img src="res/screen/ios/screen-iphone-portrait.png">
+        </div>
+        <div class="bawah">
+        <h1>Mark I is ready</h1>
+        <p>width : <span id="infowidth"></span> height : <span id="infoheight"></span></p>
+        </div>
+        </div>
+        </center>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="js/jquery.retina.js"></script>
+        <script>
+        $(document).ready(function() {
+            var height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
+            var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+            var tengah = height*0.65;
+            document.getElementById('wrapout').style.height=height+'px';
+            document.getElementById('wrapout').style.width=width+'px';
+            document.getElementById('tengah').style.height=tengah+'px';
+            document.getElementById('infoheight').innerHTML=height+'px';
+            document.getElementById('infowidth').innerHTML=width+'px';
+            $('img').retina();
+        });
+        </script>
+    </body>
+</html>
